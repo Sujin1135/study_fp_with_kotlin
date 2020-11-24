@@ -1,7 +1,7 @@
 package main.third
 
 fun main (args: Array<String>) {
-    println(toBinary(20))
+    println(toBinary(10))
 }
 
 fun toBinary (num: Int): String = when (num) {
