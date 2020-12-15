@@ -1,4 +1,4 @@
-package main.third
+package fourth
 
 class PartialFunction<P, R> (
     private val condition: (P) -> Boolean,
