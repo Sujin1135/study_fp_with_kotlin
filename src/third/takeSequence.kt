@@ -15,6 +15,7 @@ private operator fun <T> Sequence<T>.plus(other: () -> Sequence<T>) = object : S
 }
 
 fun main(args: Array<String>) {
+    println(repeat(3).drop(1))
     println(takeSequence(5, repeat(3)))
 }
 

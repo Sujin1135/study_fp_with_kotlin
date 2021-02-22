@@ -8,16 +8,14 @@ fun main(args: Array<String>) {
     println("result is $result")
 }
 
-fun getOne(num: Double): Double = when {
+tailrec fun getOne(num: Double): Double = when {
     num < 1.0 -> num
     else -> {
-        val squaredNum = squareRoot(num)
-        val devidedNum = devide(squaredNum)
+        val squaredNum = sqrt(num)
+        val dividedNum = divide(squaredNum)
 
-        getOne(devidedNum)
+        getOne(dividedNum)
     }
 }
 
-private fun devide(num: Double): Double = num / 2
-
-private fun squareRoot(num: Double): Double = sqrt(num)
+private fun divide(num: Double): Double = num / 2

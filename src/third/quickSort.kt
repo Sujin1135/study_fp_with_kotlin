@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 }
 
 fun quickSort(array: IntArray, left: Int = 0, right: Int = array.size - 1) {
-    val index = partition (array, left, right)
+    val index = partition(array, left, right)
 
     if(left < index-1) { // 2) Sorting left half
         quickSort(array, left, index-1)
