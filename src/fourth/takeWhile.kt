@@ -6,7 +6,8 @@ import main.third.tail
 fun main(args: Array<String>) {
     tailrec fun takeWhile(
             condition: (Int, Int) -> Boolean,
-            numbers: List<Int>, limit: Int,
+            numbers: List<Int>,
+            limit: Int,
             acc: List<Int> = listOf()
     ): List<Int> = when {
         numbers.isEmpty() -> acc

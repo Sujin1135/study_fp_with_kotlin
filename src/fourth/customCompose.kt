@@ -3,7 +3,7 @@ package main.fourth
 import kotlin.math.pow
 
 fun main(args: Array<String>) {
-    infix fun <F, G, R> ((F) -> R).compose(g: (G) -> F): (G) -> R {
+    infix fun <F, G, R>((F) -> R).compose(g: (G) -> F): (G) -> R {
         return { gInput: G -> this(g(gInput)) }
     }
 
