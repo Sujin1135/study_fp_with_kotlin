@@ -12,10 +12,15 @@ data class Cons<out A>(val head: A, val tail: FunList<A>) : FunList<A>() {
     override fun toString(): String = tailToString()
 }
 
+tailrec fun <T> FunList<T>.reverse(acc: FunList<T> = Nil): FunList<T> = when(this) {
+    Nil -> acc
+    is Cons -> tail.reverse(acc.addHead(head))
+}
+
 fun <T> FunList<T>.addHead(head: T): FunList<T> = Cons(head, this)
 
 tailrec fun <A, B> FunList<A>.map(f: (A) -> B, acc: FunList<B> = Nil): FunList<B> = when(this) {
-    Nil -> acc
+    Nil -> acc.reverse()
     is Cons -> tail.map(f, acc.addHead(f(head)))
 }
 
